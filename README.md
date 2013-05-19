@@ -34,16 +34,16 @@ npm install -g node-gyp
 move into the root directory of our project and type
 
 ```javascript
-	npm install
+npm install
 ```
 in order to get all the dependencies installed.
 
 ###### Troubleshooting
 1. If you have a problem with zombie and contextify, try to move into
-xxx/node_modules/zombie/node_modules/jsdom
+*xxx/node_modules/zombie/node_modules/jsdom*
 and here type:
-npm install contextify
-because there is a dependency issue with zombie and jsdon/contextify
+*npm install contextify*
+because there is a dependency issue with zombie and jsdom/contextify
 
 
 ![drone](http://multimediatechnology.at/~fhs33718/upload/Foto.png)
