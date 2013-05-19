@@ -23,10 +23,10 @@ Installation
 
 Some Modules of the Testframework need to be installed globally
 	nvm use v0.8.14
-npm install -g mocha
-npm install -g grunt
-npm install -g connect
-npm install -g node-gyp
+	npm install -g mocha
+	npm install -g grunt
+	npm install -g connect
+	npm install -g node-gyp
 
 ### Installing the project itself
 
