@@ -40,14 +40,10 @@ in order to get all the dependencies installed.
 
 ###### Troubleshooting
 1. If you have a problem with zombie and contextify, try to move into
-```javascript
 xxx/node_modules/zombie/node_modules/jsdom
-```
 and here type:
-```javascript
 npm install contextify
-```
-   because there is a dependency issue with zombie and jsdon/contextify
+because there is a dependency issue with zombie and jsdon/contextify
 
 
 ![drone](http://multimediatechnology.at/~fhs33718/upload/Foto.png)
