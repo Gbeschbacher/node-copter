@@ -49,7 +49,7 @@ describe('Check if the drone is connected and ', function(){
             socket.publish("/drone/image", "/image/" + (Math.random()));
             imageSendingPaused = true;
             return setTimeout((function() {
-                return imageSendingPaused = false;
+                imageSendingPaused = false;
             }), 100);
         });
         socket.subscribe("/drone/move", function(cmd) {
@@ -64,7 +64,6 @@ describe('Check if the drone is connected and ', function(){
             var _name;
             console.log('drone command: ', cmd);
             droneBool = true;
-            console.log('----------------------------------')
             return typeof drone[_name = cmd.action] === "function" ? drone[_name]() : void 0;
         });
 
@@ -90,8 +89,8 @@ describe('Check if the drone is connected and ', function(){
         browser.close();
 
     });
-/* 
-    it('shows the battery status of the drone (only if drone is connected)' , function(done){
+ 
+/*    it('shows the battery status of the drone (only if drone is connected)' , function(done){
         browser.visit("/connect", function () {
             expect(browser.success).to.equal(true);
             expect(browser.location.pathname).to.equal('/connect');
@@ -126,22 +125,21 @@ describe('Check if the drone is connected and ', function(){
             expect(browser.success).to.equal(true);
             expect(browser.location.pathname).to.equal('/connect');
             function mapLoaded(window) {
-              return window.document.querySelector(".btn-success");
+                return window.document.querySelector(".btn-success");
             }
+
             browser.wait(mapLoaded, function() {
                 // Page has a #btn-success element now
-                browser.pressButton(".btn-success", function() {  
-                    //setTimeout is necessary bcs it takes time until the packet arrived 
-                    setTimeout(function() {
-                        expect(droneBool).to.equal(true);
-                        droneBool = false;
-                        done();
-                    },1000);    
+                browser.pressButton(".btn-success", function() {
+                    console.log(droneBool);  
+                    expect(droneBool).to.equal(true);
+                    droneBool = false;
+                    done();    
                 });
             });
         });
     });
-
+   
    it('shows that a faye packet will arrive when publish in test' , function(done){
         client.publish('/drone/drone', { action: 'takeoff' });
         //setTimeout is necessary bcs it takes time until the packet arrived 
@@ -149,7 +147,7 @@ describe('Check if the drone is connected and ', function(){
             expect(droneBool).to.equal(true);
             droneBool = false;
             done();
-        },100)
+        },100);
     });
 });
 

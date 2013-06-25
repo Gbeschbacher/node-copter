@@ -28,12 +28,15 @@ describe('routes', function() {
             expect(response.data).to.not.be.empty();
         });
     });
-    describe('#show about', function() {
+    describe('#show about', function(done) {
         it('should be a function and set proper ViewName and viewData', function() {
             expect(routes.about).to.be.a('function');
             routes.about(request, response);
-            expect(response.viewName).to.be('about');
-            expect(response.data).to.not.be.empty();
+            setTimeout(function() {
+                expect(response.viewName).to.be('about');
+                expect(response.data).to.not.be.empty();
+                done(); 
+            }, 30);            
         });
     });
     describe('#show connect', function() {

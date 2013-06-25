@@ -3,8 +3,7 @@ define(['jQuery', 'logger', 'keydrown', 'underscore', 'faye', 'bacon'],
 	var DroneModel = function () {
 
 		this._batteryState = undefined;
-		this._droneState={
-		};
+		this.currentImg = 0;
 
 		this._isMobileBrowser = this._checkIfMobile(navigator.userAgent || navigator.vendor || window.opera);
 	};
@@ -18,6 +17,14 @@ define(['jQuery', 'logger', 'keydrown', 'underscore', 'faye', 'bacon'],
 			return false;
 		} 
 
+	};
+
+	DroneModel.prototype.setCurrentImg = function(src) {
+		this.currentImg = src;
+	};
+	
+	DroneModel.prototype.getCurrentImg = function() {
+		return this.currentImg;
 	};
 
 

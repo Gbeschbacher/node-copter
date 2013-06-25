@@ -10,9 +10,9 @@ module.exports = function(grunt) {
           jQuery: true,
           console: true,
           module: true,
-          document: true
-        },
-        smarttabs:true
+          document: true,
+          smarttabs: true
+        }
       }
     },
     watch: {
@@ -24,7 +24,8 @@ module.exports = function(grunt) {
     },
     mochaTestConfig: {
       options: {
-        reporter: 'nyan'        
+        reporter: 'nyan',
+        timeout: '8000'        
       }
     }
   });

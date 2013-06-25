@@ -1,7 +1,10 @@
 ##node-copter-webapp
 
->Use a mobile browser to control the AR Parrot Drone 2.0 via Node.js
->Furthermore we can scan qr-code through out the stream!
+>Use smartphones, tablets or desktop to control the AR Parrot Drone 2.0 via Node.js server
+>Record flights or take pictures
+>Scan qr-codes through out the stream!
+>Snap to flip
+>Hook up and realease!
 >The Project ist still under heavy development!
 
 ```javascript
@@ -9,42 +12,36 @@ npm install
 npm test
 npm start
 ```
-RC controlled Node-Copter (compatible with Smarthpones, Tablets and Desktops)
 
-Collaborators
+###Collaborators
 ======
 - Eschbacher Georg
 - Hettegger Michael
 
-Installation
+###Installation
 --------
 
-## Cross-Platform
-
-Some Modules of the Testframework need to be installed globally
+Some Modules need to be installed globally
 ```javascript
 nvm use v0.8.14
-npm install -g mocha
-npm install -g grunt
-npm install -g connect
-npm install -g node-gyp
+	npm install -g mocha
+	npm install -g grunt-cli
 ```
-### Installing the project itself
 
-move into the root directory of our project and type
+You also need a redis-database. The database needs one set called codes which includes qr-codes you want to allow.
+
+Type these commands in your redis-cli:
 
 ```javascript
-npm install
+SADD codes yourqrcode
 ```
-in order to get all the dependencies installed.
 
-###### Troubleshooting
-1. If you have a problem with zombie and contextify, try to move into
-*xxx/node_modules/zombie/node_modules/jsdom*
+### Troubleshooting
+If you have a problem with zombie and contextify, go to 
+	xxx/node_modules/zombie/node_modules/jsdom
 and here type:
-*npm install contextify*
-because there is a dependency issue with zombie and jsdom/contextify
-
+	npm install contextify
+because there is a dependency issue with zombie and jsdon/contextify
 
 ![drone](http://multimediatechnology.at/~fhs33718/upload/Foto.png)
 
